@@ -117,7 +117,7 @@ describe('<PokemonPage />', () => {
         </Router>
       )
     })
-
+    //screen.debug()
     expect(screen.getByText('Previous')).toHaveAttribute('href', '/pokemon/ditto')
     expect(screen.getByText('Next')).toHaveAttribute('href', '/pokemon/vaporeon')
   })
