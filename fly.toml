@@ -3,11 +3,12 @@
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
 
+app_name = "fs-pokedex-2023"
 app = "fs-pokedex-2023"
 primary_region = "arn"
 
 [env]
-  PORT = "3000"
+  PORT = "8080"
 
 [deploy]
   release_command = "npm run build"
@@ -20,7 +21,7 @@ primary_region = "arn"
     NODE_VERSION = "16.15.0"
 
 [http_service]
-  internal_port = 3000
+  internal_port = 8080
   force_https = true
   auto_stop_machines = true
   auto_start_machines = true
