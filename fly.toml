@@ -12,6 +12,7 @@ kill_timeout = "5s"
 
 [deploy]
   release_command = "npm run build"
+  strategy = "bluegreen"
 
 [processes]
   app = "node app.js"
