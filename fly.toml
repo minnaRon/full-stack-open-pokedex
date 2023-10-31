@@ -28,6 +28,20 @@ primary_region = "arn"
   min_machines_running = 0
   processes = ["app"]
 
+[[services]]
+  http_checks = []
+  internal_port = 8080
+  protocol = "tcp"
+  auto_stop_machines = true
+  auto_start_machines = true
+  min_machines_running = 0
+  processes = ["app"]
+
+  [[services.ports]]
+    handlers = ["http"]
+    port = 8080
+    force_https = true
+
   [[services.tcp_checks]]
     grace_period = "1s"
     interval = "15s"
