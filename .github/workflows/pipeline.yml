@@ -30,6 +30,7 @@ jobs:
           text: Build failed
           description: latest commit ${{ toJson(github.event.head_commit.url) }}
           details: check this with ${{ toJson(github.event.pusher.name) }}
+          webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
       - name: Test
         run: npm run test
       - name: e2e tests
@@ -52,6 +53,7 @@ jobs:
           text: A new version of Pokedex deployed
           description: to https://fs-pokedex-2023.fly.dev/
           details: latest commit ${{ toJson(github.event.head_commit.url) }} pushed by ${{ toJson(github.event.pusher.name) }}
+          webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
   tag_release:
     if: ${{ github.event_name == 'push' && !contains(join(toJson(github.event.commits.*.message)), '#skip')}}
     needs: [simple_deployment_pipeline]
