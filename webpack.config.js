@@ -37,10 +37,10 @@ module.exports = {
   devServer: {
     historyApiFallback: true,
   },
-  plugins: [
+/*  plugins: [
     new HtmlWebPackPlugin({
       template: "./public/index.html",
       filename: "./index.html",
     }),
-  ],
+  ],*/
 };
