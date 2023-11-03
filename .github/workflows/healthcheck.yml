@@ -1,8 +1,8 @@
 name: Health check 
 
 on:
-  schedule:
-      - cron: '10 12 * * *'
+# schedule:
+#    - cron: '10 12 * * *'
   push:
     branches:
       - master
@@ -13,6 +13,6 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: URL Health Check
-        uses: Jtalk/url-health-check-action@vfc2fe2a9ca9c9734d992431b749b79350d771fbb
+        uses: Jtalk/url-health-check-action@fc2fe2a9ca9c9734d992431b749b79350d771fbb
         with:
           url: https://fs-pokedex-2023.fly.dev
